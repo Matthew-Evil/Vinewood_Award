@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голосование | Vinewood Awards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/vinewood-logo.png" alt="Vinewood RP">
+                <h1>Vinewood Awards</h1>
+            </div>
+            <div class="countdown" id="votingCountdown">
+                <span>До окончания голосования:</span>
+                <div class="timer">
+                    <span id="voteDays">00</span>д 
+                    <span id="voteHours">00</span>ч 
+                    <span id="voteMinutes">00</span>м 
+                    <span id="voteSeconds">00</span>с
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="nominations.html">Номинации</a></li>
+                    <li><a href="#" class="active">Голосование</a></li>
+                    <li><a href="winners.html">Победители</a></li>
+                    <li><a href="admin.html" class="admin-link">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="voting">
+            <div class="container">
+                <h2>Голосование</h2>
+                <p class="stage-description">Выберите одного кандидата в каждой категории. Голосовать можно только один раз в каждой номинации.</p>
+                
+                <div class="nomination-category">
+                    <h3>Лучший криминальный авторитет</h3>
+                    <div class="candidates-grid">
+                        <div class="candidate-card">
+                            <div class="candidate-image" style="background-image: url('img/default-avatar.jpg');"></div>
+                            <h4>Артем_Воронин</h4>
+                            <p>Лидер "Братства"</p>
+                            <button class="btn vote-btn">Голосовать</button>
+                        </div>
+                        <div class="candidate-card">
+                            <div class="candidate-image" style="background-image: url('img/default-avatar.jpg');"></div>
+                            <h4>Михаил_Петрович</h4>
+                            <p>Глава "Славян"</p>
+                            <button class="btn vote-btn">Голосовать</button>
+                        </div>
+                        <!-- Остальные 8 кандидатов -->
+                    </div>
+                </div>
+                
+                <div class="nomination-category">
+                    <h3>Лучший полицейский</h3>
+                    <div class="candidates-grid">
+                        <div class="candidate-card">
+                            <div class="candidate-image" style="background-image: url('img/default-avatar.jpg');"></div>
+                            <h4>Джон_Макклейн</h4>
+                            <p>Капитан LSPD</p>
+                            <button class="btn vote-btn">Голосовать</button>
+                        </div>
+                        <div class="candidate-card">
+                            <div class="candidate-image" style="background-image: url('img/default-avatar.jpg');"></div>
+                            <h4>Сара_Коннор</h4>
+                            <p>Сержант SASP</p>
+                            <button class="btn vote-btn">Голосовать</button>
+                        </div>
+                        <!-- Остальные 8 кандидатов -->
+                    </div>
+                </div>
+                
+                <div class="voting-rules">
+                    <h3>Правила голосования</h3>
+                    <ul>
+                        <li>Вы можете проголосовать только один раз в каждой категории</li>
+                        <li>Голосование анонимно для других участников</li>
+                        <li>Администрация сервера может видеть статистику голосования</li>
+                        <li>Попытки накрутки голосов будут караться баном</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/vinewood-logo-small.png" alt="Vinewood RP">
+                <span>Vinewood Role Play</span>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2025 Vinewood RP. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
