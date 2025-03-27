@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Номинации | Vinewood Awards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/vinewood-logo.png" alt="Vinewood RP">
+                <h1>Vinewood Awards</h1>
+            </div>
+            <div class="countdown" id="nominationCountdown">
+                <span>До окончания приема кандидатур:</span>
+                <div class="timer">
+                    <span id="nomDays">00</span>д 
+                    <span id="nomHours">00</span>ч 
+                    <span id="nomMinutes">00</span>м 
+                    <span id="nomSeconds">00</span>с
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#" class="active">Номинации</a></li>
+                    <li><a href="voting.html">Голосование</a></li>
+                    <li><a href="winners.html">Победители</a></li>
+                    <li><a href="admin.html" class="admin-link">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="nominations">
+            <div class="container">
+                <h2>Номинации</h2>
+                <p class="stage-description">На этом этапе вы можете предложить до 3 кандидатов в каждой категории. После завершения этапа будут отобраны 10 самых популярных кандидатов в каждой номинации для голосования.</p>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="character">Персонажи</button>
+                    <button class="tab-btn" data-tab="organization">Организации</button>
+                    <button class="tab-btn" data-tab="events">События</button>
+                </div>
+                
+                <div class="tab-content active" id="character">
+                    <div class="nomination-category">
+                        <h3>Лучший криминальный авторитет</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nomination-category">
+                        <h3>Лучший полицейский</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nomination-category">
+                        <h3>Лучший медик</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                            <input type="text" placeholder="Никнейм персонажа" class="candidate-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="organization">
+                    <div class="nomination-category">
+                        <h3>Лучшая криминальная группировка</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Название организации" class="candidate-input">
+                            <input type="text" placeholder="Название организации" class="candidate-input">
+                            <input type="text" placeholder="Название организации" class="candidate-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nomination-category">
+                        <h3>Лучший легальный бизнес</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Название бизнеса" class="candidate-input">
+                            <input type="text" placeholder="Название бизнеса" class="candidate-input">
+                            <input type="text" placeholder="Название бизнеса" class="candidate-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="events">
+                    <div class="nomination-category">
+                        <h3>Самый эпичный рейд</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nomination-category">
+                        <h3>Лучшее ролевое событие</h3>
+                        <div class="candidates-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                            <input type="text" placeholder="Описание события" class="candidate-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn submit-nominations">Отправить предложения</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/vinewood-logo-small.png" alt="Vinewood RP">
+                <span>Vinewood Role Play</span>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2025 Vinewood RP. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

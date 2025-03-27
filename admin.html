@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель | Vinewood Awards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/vinewood-logo.png" alt="Vinewood RP">
+                <h1>Vinewood Awards</h1>
+            </div>
+            <div class="admin-status">
+                <span>Администратор: <strong>Admin_Name</strong></span>
+                <button class="btn logout-btn">Выйти</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="admin-panel">
+            <div class="container">
+                <h2>Административная панель</h2>
+                
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-tab="categories">Категории</button>
+                    <button class="admin-tab-btn" data-tab="candidates">Кандидаты</button>
+                    <button class="admin-tab-btn" data-tab="votes">Голоса</button>
+                    <button class="admin-tab-btn" data-tab="settings">Настройки</button>
+                </div>
+                
+                <div class="admin-tab-content active" id="categories">
+                    <h3>Управление категориями</h3>
+                    <div class="admin-form">
+                        <div class="form-group">
+                            <label for="categoryName">Название категории:</label>
+                            <input type="text" id="categoryName" placeholder="Введите название">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryType">Тип категории:</label>
+                            <select id="categoryType">
+                                <option value="character">Персонаж</option>
+                                <option value="organization">Организация</option>
+                                <option value="event">Событие</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryDescription">Описание:</label>
+                            <textarea id="categoryDescription" placeholder="Описание категории"></textarea>
+                        </div>
+                        <button class="btn add-category">Добавить категорию</button>
+                    </div>
+                    
+                    <div class="categories-list">
+                        <h4>Текущие категории</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название</th>
+                                    <th>Тип</th>
+                                    <th>Кандидатов</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Лучший криминальный авторитет</td>
+                                    <td>Персонаж</td>
+                                    <td>14</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Лучший полицейский</td>
+                                    <td>Персонаж</td>
+                                    <td>12</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Лучшая криминальная группировка</td>
+                                    <td>Организация</td>
+                                    <td>8</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-tab-content" id="candidates">
+                    <h3>Управление кандидатами</h3>
+                    <div class="admin-form">
+                        <div class="form-group">
+                            <label for="candidateCategory">Категория:</label>
+                            <select id="candidateCategory">
+                                <option value="">Выберите категорию</option>
+                                <option value="1">Лучший криминальный авторитет</option>
+                                <option value="2">Лучший полицейский</option>
+                                <option value="3">Лучшая криминальная группировка</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateName">Имя кандидата:</label>
+                            <input type="text" id="candidateName" placeholder="Введите имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateDescription">Описание:</label>
+                            <input type="text" id="candidateDescription" placeholder="Краткое описание">
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateImage">Изображение:</label>
+                            <input type="file" id="candidateImage">
+                        </div>
+                        <button class="btn add-candidate">Добавить кандидата</button>
+                    </div>
+                    
+                    <div class="candidates-list">
+                        <h4>Текущие кандидаты</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Категория</th>
+                                    <th>Голоса</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Артем_Воронин</td>
+                                    <td>Лучший криминальный авторитет</td>
+                                    <td>124</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Джон_Макклейн</td>
+                                    <td>Лучший полицейский</td>
+                                    <td>98</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Братство</td>
+                                    <td>Лучшая криминальная группировка</td>
+                                    <td>76</td>
+                                    <td>
+                                        <button class="btn-icon edit-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon delete-btn"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-tab-content" id="votes">
+                    <h3>Статистика голосования</h3>
+                    <div class="stats-filters">
+                        <div class="form-group">
+                            <label for="statsCategory">Категория:</label>
+                            <select id="statsCategory">
+                                <option value="">Все категории</option>
+                                <option value="1">Лучший криминальный авторитет</option>
+                                <option value="2">Лучший полицейский</option>
+                                <option value="3">Лучшая криминальная группировка</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="statsDate">Дата:</label>
+                            <input type="date" id="statsDate">
+                        </div>
+                        <button class="btn apply-filters">Применить</button>
+                        <button class="btn export-btn">Экспорт в CSV</button>
+                    </div>
+                    
+                    <div class="votes-stats">
+                        <h4>Результаты голосования</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Категория</th>
+                                    <th>Кандидат</th>
+                                    <th>Голоса</th>
+                                    <th>%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Лучший криминальный авторитет</td>
+                                    <td>Артем_Воронин</td>
+                                    <td>124</td>
+                                    <td>45%</td>
+                                </tr>
+                                <tr>
+                                    <td>Лучший криминальный авторитет</td>
+                                    <td>Михаил_Петрович</td>
+                                    <td>98</td>
+                                    <td>36%</td>
+                                </tr>
+                                <tr>
+                                    <td>Лучший полицейский</td>
+                                    <td>Джон_Макклейн</td>
+                                    <td>104</td>
+                                    <td>38%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="votes-chart">
+                        <h4>График голосования</h4>
+                        <div class="chart-container">
+                            <canvas id="votesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-tab-content" id="settings">
+                    <h3>Настрой
